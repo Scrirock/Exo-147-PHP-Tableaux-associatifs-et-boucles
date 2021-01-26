@@ -26,3 +26,17 @@ $college = array(
 echo "10.Les élèves du collège : <br>";
 
 //Ajoutez votre code ici
+
+//echo $college["Sixieme"][0]["Nom"];
+$i = 1;
+foreach ($college as $classe => $eleve){
+    echo $classe."<br><br>";
+    foreach ($eleve as $truc => $valeur){
+        foreach ($valeur as $identite){
+            echo $identite."  ";
+            if ($i%2 === 0) echo "<br>";
+            $i++;
+        }
+    }
+    echo "<br>";
+}

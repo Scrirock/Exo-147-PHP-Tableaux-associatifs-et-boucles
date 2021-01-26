@@ -39,7 +39,20 @@ $videotheque = array(
 
 echo '12.Mes films : <br>';
 //ajoutez votre code ici
+    foreach ($videotheque as $arr => $value){
+        echo "<br><br>";
+        foreach ($value as $key => $film){
+            if (is_array($film)){
+                echo $key.": ";
+                foreach ($film as $acteurs){
+                    echo $acteurs.", ";
+                }
+                echo "<br>";
+            }
+            else echo $key.": ".$film."<br>";
 
+        }
+    }
 
 //----------------------------------------
 //Afficher toutes les informations de la vidéothèque
@@ -47,6 +60,45 @@ echo '12.Mes films : <br>';
 //informations (nom, date, realisateur, acteurs) et en plus de ces informations
 //rajoutez un synopsis
 
+echo "<br><br>";
 echo '13.Mes films : <br>';
 //ajoutez votre code ici
 
+
+$videotheque[] = array(
+        "nom" => "test",
+        "date" => 1578,
+        "realisateur" => "truc",
+        "acteur" => array("fgxh", "sthtf", "rgztdh"),
+        "synopsys" => "c'est un film qui parle de plein de truc",
+    );
+$videotheque[] = array(
+    "nom" => "bidule",
+    "date" => 7845,
+    "realisateur" => "alain",
+    "acteur" => array("lui", "l'autre", "jean"),
+    "synopsys" => "c'est l'histoire d'un fou qui prend des medoc",
+);
+
+$videotheque[] = array(
+    "nom" => "matthias",
+    "date" => 1847,
+    "realisateur" => "matthias",
+    "acteur" => array("matthias", "matthias", "matthias"),
+    "synopsys" => "cla vie de... matthias",
+);
+
+foreach ($videotheque as $arr => $value){
+    echo "<br><br>";
+    foreach ($value as $key => $film){
+        if (is_array($film)){
+            echo $key.": ";
+            foreach ($film as $acteurs){
+                echo $acteurs.", ";
+            }
+            echo "<br>";
+        }
+        else echo $key.": ".$film."<br>";
+
+    }
+}
